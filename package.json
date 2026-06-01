@@ -1,0 +1,67 @@
+{
+  "name": "squad-director",
+  "displayName": "Squad Director",
+  "description": "AI Alpha Squad Director console — queue, lifecycle, approvals",
+  "version": "0.0.1",
+  "publisher": "eduardocerqueira",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "squad-director",
+          "title": "Squad",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "squad-director": [
+        {
+          "id": "squadDirector.queue",
+          "name": "Queue"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "squadDirector.refresh",
+        "title": "Squad: Refresh Queue",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "squadDirector.signIn",
+        "title": "Squad: Sign in with GitHub"
+      }
+    ],
+    "configuration": {
+      "title": "Squad Director",
+      "properties": {
+        "squadDirector.queueRepo": {
+          "type": "string",
+          "default": "eduardocerqueira/ai-alpha-squad",
+          "description": "Queue repository (owner/name)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.0",
+    "@vscode/vsce": "^3.2.0"
+  }
+}
