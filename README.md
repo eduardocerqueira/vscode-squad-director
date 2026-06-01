@@ -13,3 +13,8 @@ Implementation happens here; Business Analysis and specs live on the parent issu
 ## Status
 
 Scaffold pending — squad **Developer** agent delivers via PRs to this repo.
+
+## Squad Director (v1 scaffold)
+
+Automated greenfield scaffold from [AI Alpha Squad](https://github.com/eduardocerqueira/ai-alpha-squad) Job 1.
+Run `npm install && npm run compile` locally; use **Squad: Sign in with GitHub** from the command palette.
